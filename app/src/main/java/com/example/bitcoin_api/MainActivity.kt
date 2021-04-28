@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
             uiThread {
                 alert ("$cotacaoBitcoin").show()
                 alert ("$cotacaoFormatada").show()
-                txtCotacao.setText(cotacaoFormatada)
+                //txtCotacao.setText(cotacaoFormatada)
             }
         }
     }
