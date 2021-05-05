@@ -32,6 +32,9 @@ class MainActivity : AppCompatActivity() {
         Log.w(TAG, "LOG DE ALERTA")
         Log.e(TAG, "LOG DE ERRO", RuntimeException("TESTE ERRO"))*/
         buscaCotacao()
+        btnCalcular.setOnClickListener(){
+            calcular()
+        }
     }
     fun buscaCotacao(){
         doAsync {
@@ -41,10 +44,23 @@ class MainActivity : AppCompatActivity() {
             val f = NumberFormat.getCurrencyInstance(Locale("pt", "br"))
             val cotacaoFormatada = f.format(cotacaoBitcoin)
             uiThread {
-                alert ("$cotacaoBitcoin").show()
-                alert ("$cotacaoFormatada").show()
-                //txtCotacao.setText(cotacaoFormatada)
+               // alert ("$cotacaoBitcoin").show()
+               // alert ("$cotacaoFormatada").show()
+            txtCotacao.setText(" $cotacaoFormatada")
             }
         }
+    }
+    fun calcular(){
+        if(txtValor.text.isEmpty()){
+            txtValor.error = "Preencha um valor"
+            return
+        }
+        //valor digitado usuario
+        val valorDigitado = txtValor.text.toString()
+            .replace(",",".").toDouble()
+            //.replace(".","").toDouble().toDouble()
+        val resultado = if(cotacaoBitcoin>0) valorDigitado / cotacaoBitcoin
+        else 0.0
+        txtQtdBitcoins.text = "%.8f".format(resultado)
     }
 }
