@@ -12,6 +12,12 @@
 
     <include layout="@layout/bloco_cotacao"/>
 
+    <include layout="@layout/bloco_maior"/>
+
+    <include layout="@layout/bloco_menor"/>
+
+    <include layout="@layout/bloco_data"/>
+
     <include layout="@layout/bloco_entrada"/>
 
     <include layout="@layout/bloco_saida"/>
