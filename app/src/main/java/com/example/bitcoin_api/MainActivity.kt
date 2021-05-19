@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
             val dataFormatada = format.format(date)
             val cotacaoFormatada = f.format(cotacaoBitcoin)
             val maiorFormatada = f.format(maiorBitcoin)
-            val menorFormatada = f.format(maiorBitcoin)
+            val menorFormatada = f.format(menorBitcoin)
             uiThread {
                // alert ("$cotacaoBitcoin").show()
                // alert ("$cotacaoFormatada").show()
